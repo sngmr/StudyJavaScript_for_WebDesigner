@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+	<meta charset="utf-8">
+<body>
+	<input id="button" type="button" value="クリック" />
+</body>
+<script type="text/javascript">
+var button = document.getElementById('button');
+button.addEventListener('click', function(e) {
+	alert(e.target.id);
+});
+</script>
+</html>

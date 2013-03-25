@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+	<meta charset="utf-8">
+<body>
+	<input id="button" type="button" value="CHANGE" />
+	<div>
+		<label id="title"></label>
+		<div>
+			<img id="image" src="" />
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+window.onload = function() {
+	// ボタンにイベントハンドラ(画像変更)割り当て
+	var button = document.getElementById('button');
+	button.addEventListener('click', changeImage);
+	
+	// 最初の画像を表示
+}
+
+// 画像のリストを宣言する
+var imageList = [];
+imageList.push('http://2.bp.blogspot.com/-4dy1rnQK4a8/TzpKOciYFnI/AAAAAAAACLE/wm9vS5Vch3s/s320/Cat+Wallpaper+4.jpeg');
+imageList.push('http://1.bp.blogspot.com/-e50x410Msa8/TzpIibndZCI/AAAAAAAACKs/37UxSFFdNuQ/s320/Cat+Wallpaper+1.jpg');
+imageList.push('http://4.bp.blogspot.com/-pGeD5UnLhQc/TzpJ9ePZY4I/AAAAAAAACK8/_UXmBNtKShU/s320/Cat+Wallpaper+3.jpg');
+imageList.push('http://3.bp.blogspot.com/-6rGZmV9_bic/TzpLCmXUR6I/AAAAAAAACLc/YManzOsQQ1c/s320/Cat+Wallpaper+7.jpg');
+imageList.push('http://4.bp.blogspot.com/-V6_HaB5WP98/TzpKyd0qv5I/AAAAAAAACLU/0dX5IZdARNA/s320/Cat+Wallpaper+6.jpg');
+
+// 次の画像のインデックスを保存
+
+// 画像を変更するメソッド
+function changeImage() {
+	
+}
+</script>
+</html>

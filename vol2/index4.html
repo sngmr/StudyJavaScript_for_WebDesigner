@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script>
+  $(function() {
+    // URLを定義します（後で変更しやすいように変数にしています）
+    var url = "http://api.tumblr.com/v2/tagged?tag=cats&api_key=fuiKNFp9vQFvjLNvx4sUwti4Yb5yGutBN4Xh10LXZhhRKjWlV4&callback=?";
+    
+    // jQueryのgetJSONメソッドを使ってデータを取得します
+    $.getJSON(url, {}, function(data) {
+    	// とりあえず受け取ったデータ全体をConsoleに出力
+    	// console.log(data);
+    	
+    	// 実際のデータ(response)を取得する
+    	var res = data.response;
+    	// console.log(res);
+    	
+    	// resは配列なのでfor文で全件処理する
+    	for (var i = 0; i < res.length; i++) {
+        // 受け取ったデータからURLを取得する
+    		var postUrl = res[i].post_url;
+        // 受け取ったデータからブログ名を取得する
+        var blogName = res[i].blog_name;
+    		// console.log(postUrl);
+        
+        // aタグでアンカーを作って、HTMLへ挿入する（ちょっと適当すぎるけどとりあえず）
+        var link = $('<a href="' + postUrl + '">' + blogName + '</a>');
+        $("#container").append(link);
+        $("#container").append($('<br/>'));
+    	}
+    });
+  });
+  </script>
+</head>
+<body>
+	<div id="container"></div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+	<meta charset="utf-8">
+<body>
+	<input id="button" type="button" value="CHANGE" />
+	<div>
+		<label id="title"></label>
+		<div>
+			<img id="image" src="" />
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+window.onload = function() {
+	// ボタンにイベントハンドラ(画像変更)割り当て
+	var button = document.getElementById('button');
+	button.addEventListener('click', changeImage);
+	
+	// 最初の画像を表示
+	changeImage();
+}
+
+// 画像のリストを宣言する
+var imageList = [];
+imageList.push({
+	title: '２匹',
+	url: 'http://2.bp.blogspot.com/-4dy1rnQK4a8/TzpKOciYFnI/AAAAAAAACLE/wm9vS5Vch3s/s320/Cat+Wallpaper+4.jpeg'});
+imageList.push({
+	title: '鼻と口とヒゲ',
+	url: 'http://1.bp.blogspot.com/-e50x410Msa8/TzpIibndZCI/AAAAAAAACKs/37UxSFFdNuQ/s320/Cat+Wallpaper+1.jpg'});
+imageList.push({
+	title: 'zzzzzzz',
+	url: 'http://4.bp.blogspot.com/-pGeD5UnLhQc/TzpJ9ePZY4I/AAAAAAAACK8/_UXmBNtKShU/s320/Cat+Wallpaper+3.jpg'});
+imageList.push({
+	title: 'あと５分だけ',
+	url: 'http://3.bp.blogspot.com/-6rGZmV9_bic/TzpLCmXUR6I/AAAAAAAACLc/YManzOsQQ1c/s320/Cat+Wallpaper+7.jpg'});
+imageList.push({
+	title: '黄昏ネコ',
+	url: 'http://4.bp.blogspot.com/-V6_HaB5WP98/TzpKyd0qv5I/AAAAAAAACLU/0dX5IZdARNA/s320/Cat+Wallpaper+6.jpg'});
+
+// 次の画像のインデックスを保存
+var nextImageIndex = 0;
+
+// 画像を変更するメソッド
+function changeImage() {
+	// 画像をImageタグに表示する
+	var image = document.getElementById('image');
+	image.setAttribute('src', imageList[nextImageIndex]);
+	
+	// 次の画像が表示されるようにインデックスをひとつ進める
+	// ただし最後までいったら最初に戻す
+	nextImageIndex += 1;
+	if (imageList.length <= nextImageIndex) {
+		nextImageIndex = 0;
+	}
+}
+</script>
+</html>

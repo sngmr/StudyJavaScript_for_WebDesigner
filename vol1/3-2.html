@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+	<meta charset="utf-8">
+<body>
+	<input id="button" type="button" value="クリック" onclick="buttonClick()" />
+	<div>
+		<img id="image" src="" />
+	</div>
+</body>
+<script type="text/javascript">
+function buttonClick(e) {
+	var imageAddress = 'http://www.rvr.jp/cms/wp-content/uploads/2012/04/250px-Yoshihiko_Noda-3.jpg';
+	var image = document.getElementById('image');
+	image.setAttribute('src', imageAddress);
+}
+</script>
+</html>
